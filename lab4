@@ -1,0 +1,62 @@
+#index.html
+
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Two-Way Binding Example</title>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="FormController">
+
+    <h1>Two-Way Binding Example</h1>
+
+    <form>
+
+        <label>Name:</label>
+        <input type="text" ng-model="user.name">
+
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" ng-model="user.email">
+
+        <br><br>
+
+        <label>Message:</label>
+        <textarea ng-model="user.message"></textarea>
+
+        <br><br>
+
+        <button type="button" ng-click="submitForm()">
+            Submit
+        </button>
+
+    </form>
+
+    <h2>Form Data:</h2>
+
+    <p>Name: {{ user.name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Message: {{ user.message }}</p>
+
+</body>
+
+#app.js
+
+angular.module('app', [])
+
+.controller('FormController', ['$scope', function($scope) {
+
+    $scope.user = {};
+
+    $scope.submitForm = function() {
+        alert('Form submitted successfully!');
+    };
+
+}]);
+
+</html>
