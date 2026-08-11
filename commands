@@ -1,0 +1,14 @@
+#Angular.js
+
+mkdir angularjs-demo
+cd angularjs-demo
+npm init -y
+npm install angular@1.8.3
+npm install --save-dev http-server
+npx http-server
+
+#React.js
+
+  npx create-react-app logo-app
+  cd logo-app
+  npm start
